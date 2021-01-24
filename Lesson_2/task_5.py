@@ -17,7 +17,7 @@ def print_pair(char_code: int) -> None:
 
 def print_row(pair_number: int, char_code: int) -> None:
     """
-    производит печать строки таблицы, для печати пары Символ\код вызывает функцию print_pair
+    производит печать строки таблицы, для печати пары "Символ - код" вызывает функцию print_pair
     :param pair_number: количество пар в строке
     :param char_code: код символа с которого надо начинать печать строки
     :return: ничего не возвращает
@@ -35,14 +35,14 @@ def print_row(pair_number: int, char_code: int) -> None:
 
 def print_table(char_code: int, row_number: int, pair_in_row: int) -> None:
     """
-    печатает таблицу с парами Символ\код. для печати строки вызывает функцию print_row
+    печатает таблицу с парами "Символ - код". для печати строки вызывает функцию print_row
     :param char_code: Код символа с которого надо начинать печатать таблицу
     :param row_number: количество строк в таблице
     :param pair_in_row: символов в строке
     :return:
     """
     print_row(pair_in_row, char_code)
-    if row_num != 0:
+    if row_number != 0:
         print_table(char_code + pair_in_row, row_number - 1, pair_in_row)
 
 

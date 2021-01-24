@@ -15,15 +15,26 @@ def cut_digit(number: int) -> int:
     return digit
 
 
-def reverse_number(number: int) -> int:
+def rate_count(number):
+    rate = 1
     if number != 0:
-        digit = cut_digit(number)
         tmp_number = number // 10
-        return str(digit) + str(reverse_number(tmp_number))
+        rate = rate + rate_count(tmp_number)
+        return rate
     else:
-        return ""
+        return 0
+
+
+def reverse_number(number: int, rate: int) -> int:
+    if number != 0:
+        digit = cut_digit(number) * 10 ** (rate-1)
+        tmp_number = number // 10
+        new_number = digit + reverse_number(tmp_number, rate - 1)
+        return new_number
+    else:
+        return 0
 
 
 num = int(input('Введите целое число '))
 
-print(f'Число после реверса {reverse_number(num)}')
+print(f'Число после реверса {reverse_number(num, rate_count(num))}')

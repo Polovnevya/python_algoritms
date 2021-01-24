@@ -38,7 +38,7 @@ def print_table(char_code: int, row_num: int, pair_in_row: int) -> None:
     печатает таблицу с парами Символ\код. для печати строки вызывает функцию print_row
     :param char_code: Код символа с которого надо начинать печатать таблицу
     :param row_num: количество строк в таблице
-    :param char_in_row: символов в строке
+    :param pair_in_row: символов в строке
     :return:
     """
     print_row(pair_in_row, char_code)

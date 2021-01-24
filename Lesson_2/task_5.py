@@ -44,6 +44,8 @@ def print_table(char_code: int, row_number: int, pair_in_row: int) -> None:
     print_row(pair_in_row, char_code)
     if row_number != 0:
         print_table(char_code + pair_in_row, row_number - 1, pair_in_row)
+    else:
+        return None
 
 
 # Первый символ

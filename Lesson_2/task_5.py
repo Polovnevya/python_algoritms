@@ -21,12 +21,14 @@ def print_row(pair_number: int, char_code: int) -> None:
         return None
 
 
-def print_table(char_code: int, row_num):
-    print_row(10, char_code)
+def print_table(char_code: int, row_num, char_in_row):
+    print_row(char_in_row, char_code)
     if row_num != 0:
-        print_table(char_code + 10, row_num - 1)
+        print_table(char_code + char_in_row, row_num - 1, char_in_row)
 
 
-start = 32
-row_num = round((127 - 32) / 10)
-print_table(32, row_num)
+first_char_code = 32
+last_char_code = 127
+char_in_row = 10
+row_num = round((last_char_code - first_char_code) / char_in_row)
+print_table(first_char_code, row_num, char_in_row)

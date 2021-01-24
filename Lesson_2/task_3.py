@@ -35,7 +35,7 @@ def reverse_number(number: int, rate: int) -> int:
     производит реверс числа
     :param number: целое число
     :param rate: количество разрядов в числе
-    :return: возвращает верерсированное число
+    :return: возвращает реверсированное число
     """
     if number != 0:
         digit = cut_digit(number) * 10 ** (rate - 1)

@@ -20,7 +20,7 @@ def check_user_num(user_num: int, secret_num: int) -> str:
 
 def guess_num(attempt: int, num: int):
     user_num = int(input(f'Угадайте число от 0 до 100, у вас {attempt} попыток '))
-    if attempt > 0:
+    if attempt >= 2:
         if check_user_num(user_num, num) != 'Победа':
             print(check_user_num(user_num, num))
             guess_num(attempt - 1, num)

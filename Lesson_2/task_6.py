@@ -23,7 +23,7 @@ def guess_num(attempt: int, num: int):
     if attempt > 0:
         if check_user_num(user_num, num) != 'Победа':
             print(check_user_num(user_num, num))
-            guess_num(attempt-1, num)
+            guess_num(attempt - 1, num)
         else:
             print(f'Вы победили! Было загадано число {num}')
     else:
@@ -32,4 +32,4 @@ def guess_num(attempt: int, num: int):
 
 attempt_param = 10
 secret_num = randint(0, 100)
-a = guess_num(attempt_param, secret_num)
+guess_num(attempt_param, secret_num)

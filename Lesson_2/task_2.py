@@ -76,7 +76,7 @@ def odd_count(number: int) -> int:
 def main(number: int) -> str:
     """
     вызывает функции подсчета четных и нечетных чисел
-    :param number: число
+    :param number: целое натуральное число
     :return: возвращает строку
     """
     even = even_count(number)

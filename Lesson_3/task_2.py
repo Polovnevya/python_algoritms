@@ -11,6 +11,6 @@ MIN_ITEM = 0
 MAX_ITEM = 100
 SIZE = 10
 array = [randint(MIN_ITEM, MAX_ITEM) for i in range(SIZE)]
-print(array)
+print(f'Исходный массив {array}')
 second_array = [index for index, val in enumerate(array) if val % 2 == 0]
-print(second_array)
+print(f'Массив с индексами четных чисел second_array{}')

@@ -4,7 +4,6 @@
 
 from random import randint
 
-# Вариант 1
 MIN_ITEM = 0
 MAX_ITEM = 100
 SIZE = 10

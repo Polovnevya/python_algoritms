@@ -17,10 +17,10 @@ def sieve(num: int) -> int:
     ехал грека через список
     """
 
-    assert num <= 200, 'больше двухсотого числа не ищем, извините'
+    assert num <= 1000, 'Извините, число больше 1000 не ищем'
 
     START = 2
-    END = 1_000
+    END = 10_000
     sieve_count = 0
     sieve_array = [i for i in range(START, END)]
 
@@ -48,10 +48,10 @@ def prime(num: int) -> int:
     """
     модерн
     """
-    assert num <= 200, 'больше сотого числа не ищем, извините'
+    assert num <= 1000, 'Извините, число больше 1000 не ищем'
 
     START = 1
-    END = 1_000
+    END = 10_000
     sieve_count = 0
 
     def _is_prime(num: int) -> bool:
@@ -69,7 +69,8 @@ def prime(num: int) -> int:
                 return i
 
 
-user_num = int(input('Введите какое по счету простое число требуется найти: '))
+# user_num = int(input('Введите какое по счету простое число требуется найти: '))
+user_num = 999
 
 print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 

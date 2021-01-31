@@ -17,24 +17,34 @@ def func_1() -> list:
     return second_array
 
 
-def func_2() -> list:
+def ugly_func() -> list:
     MIN_ITEM = 0
     MAX_ITEM = 100
     START = 0
     END = 10
     array = []
 
+    def _get_even_indexes(user_list: list) -> list:
+        array = user_list.copy()
+        even_indexes_array = []
+        i = 0
+        while array:
+            el = array[0]
+            if el % 2 == 0:
+                ind = array.index(el)
+                even_indexes_array.append(i)
+                array.pop(ind)
+            else:
+                ind = array.index(el)
+                array.pop(ind)
+            i += 1
+        return even_indexes_array
+
     for i in range(START, END):
         array.append(randint(MIN_ITEM, MAX_ITEM))
 
-    def _get_even_indexes(user_list: list) -> list:
-        even_indexes_array = []
-        for el in user_list:
-            if el % 2 == 0:
-                ind = user_list.index(el)
-                even_indexes_array.append(ind)
-                el = user_list.pop(ind)
-        v=1
-        return _get_even_indexes(array)
+    return _get_even_indexes(array)
 
-a = func_2()
+
+a = ugly_func()
+v = 1

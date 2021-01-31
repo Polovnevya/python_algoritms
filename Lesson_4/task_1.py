@@ -47,8 +47,17 @@ def ugly_func() -> list:
 
 
 def func_3():
-    pass
-
+    MIN_ITEM = 0
+    MAX_ITEM = 100
+    SIZE = 10
+    even_indexes_array = []
+    array = [randint(MIN_ITEM, MAX_ITEM) for i in range(SIZE)]
+    for i, el in enumerate(array):
+        if el % 2 == 0:
+            even_indexes_array.append(i)
+    return even_indexes_array
 
 a = ugly_func()
+a = func_3()
+
 v = 1

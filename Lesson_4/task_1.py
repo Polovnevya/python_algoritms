@@ -4,24 +4,22 @@
     второй массив надо заполнить значениями 0, 3, 4, 5, (индексация начинается с нуля),
     т.к. именно в этих позициях первого массива стоят четные числа.
 """
-
+from timeit import timeit
+from cProfile import run
 from random import randint
 
 
-def func_1() -> list:
+def func_1(size: int) -> list:
     MIN_ITEM = 0
     MAX_ITEM = 100
-    SIZE = 10
-    array = [randint(MIN_ITEM, MAX_ITEM) for i in range(SIZE)]
+    array = [randint(MIN_ITEM, MAX_ITEM) for i in range(size)]
     second_array = [index for index, val in enumerate(array) if val % 2 == 0]
     return second_array
 
 
-def ugly_func() -> list:
+def ugly_func(size: int) -> list:
     MIN_ITEM = 0
     MAX_ITEM = 100
-    START = 0
-    END = 10
     array = []
 
     def _get_even_indexes(user_list: list) -> list:
@@ -40,24 +38,34 @@ def ugly_func() -> list:
             i += 1
         return even_indexes_array
 
-    for i in range(START, END):
+    for i in range(size):
         array.append(randint(MIN_ITEM, MAX_ITEM))
 
     return _get_even_indexes(array)
 
 
-def func_3():
+def func_3(size: int) -> list:
     MIN_ITEM = 0
     MAX_ITEM = 100
-    SIZE = 10
     even_indexes_array = []
-    array = [randint(MIN_ITEM, MAX_ITEM) for i in range(SIZE)]
+    array = [randint(MIN_ITEM, MAX_ITEM) for i in range(size)]
     for i, el in enumerate(array):
         if el % 2 == 0:
             even_indexes_array.append(i)
     return even_indexes_array
 
-a = ugly_func()
-a = func_3()
 
-v = 1
+print(timeit('func_1(1_00)', number=100, globals=globals()))
+print(timeit('func_1(1_000)', number=100, globals=globals()))
+print(timeit('func_1(10_000)', number=100, globals=globals()))
+print(timeit('func_1(100_000)', number=100, globals=globals()))
+print('********************************************************************')
+print(timeit('ugly_func(1_00)', number=100, globals=globals()))
+print(timeit('ugly_func(1_000)', number=100, globals=globals()))
+print(timeit('ugly_func(10_000)', number=100, globals=globals()))
+print(timeit('ugly_func(100_000)', number=100, globals=globals()))
+print('********************************************************************')
+print(timeit('func_3(1_00)', number=100, globals=globals()))
+print(timeit('func_3(1_000)', number=100, globals=globals()))
+print(timeit('func_3(10_000)', number=100, globals=globals()))
+print(timeit('func_3(100_000)', number=100, globals=globals()))

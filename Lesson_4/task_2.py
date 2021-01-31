@@ -77,11 +77,12 @@ def prime(num: int) -> int:
 # print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 # print(f'Простое число под номером {user_num} это {prime(user_num)}')
 #
-print(timeit('sieve(10)', number=100, globals=globals()))       #  0.0220353
-print(timeit('sieve(100)', number=100, globals=globals()))      #  1.3815776
-print(timeit('sieve(500)', number=100, globals=globals()))      #  30.284424100000003
-print(timeit('sieve(1500)', number=100, globals=globals()))     #  263.7983361
-print(timeit('sieve(2500)', number=100, globals=globals()))     #  663.8547732
+
+print(timeit('sieve(10)', number=100, globals=globals()))  # 0.0220353
+print(timeit('sieve(100)', number=100, globals=globals()))  # 1.3815776
+print(timeit('sieve(500)', number=100, globals=globals()))  # 30.284424100000003
+print(timeit('sieve(1500)', number=100, globals=globals()))  # 263.7983361
+print(timeit('sieve(2500)', number=100, globals=globals()))  # 663.8547732
 
 run('sieve(1500)')
 """
@@ -96,11 +97,11 @@ run('sieve(1500)')
 """
 print('*****************')
 
-print(timeit('prime(10)', number=100, globals=globals()))       #  0.0016482999999425374
-print(timeit('prime(100)', number=100, globals=globals()))      #  0.13568280000004052
-print(timeit('prime(500)', number=100, globals=globals()))      #  5.76559050000003
-print(timeit('prime(1500)', number=100, globals=globals()))     #  62.053306999999904
-print(timeit('prime(2500)', number=100, globals=globals()))     #  185.17176159999985
+print(timeit('prime(10)', number=100, globals=globals()))  # 0.0016482999999425374
+print(timeit('prime(100)', number=100, globals=globals()))  # 0.13568280000004052
+print(timeit('prime(500)', number=100, globals=globals()))  # 5.76559050000003
+print(timeit('prime(1500)', number=100, globals=globals()))  # 62.053306999999904
+print(timeit('prime(2500)', number=100, globals=globals()))  # 185.17176159999985
 run('prime(1500)')
 """
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)

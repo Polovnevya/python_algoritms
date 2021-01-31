@@ -75,11 +75,16 @@ def prime(num: int) -> int:
 # user_num = int(input('Введите какое по счету простое число требуется найти: '))
 # user_num = 999
 
-print(timeit('sieve(10)', number=20, globals=globals()))  # 11.101579099999999
-print(timeit('sieve(20)', number=20, globals=globals()))
-print(timeit('sieve(40)', number=20, globals=globals()))
-print(timeit('sieve(80)', number=20, globals=globals()))
-print(timeit('sieve(160)', number=20, globals=globals()))
+print(timeit('sieve(10)', number=50, globals=globals()))  # 11.101579099999999
+print(timeit('sieve(100)', number=50, globals=globals()))
+print(timeit('sieve(500)', number=50, globals=globals()))
+print(timeit('sieve(999)', number=50, globals=globals()))
+
+print('*****************')
+print(timeit('prime(10)', number=50, globals=globals()))
+print(timeit('prime(100)', number=50, globals=globals()))
+print(timeit('prime(500)', number=50, globals=globals()))
+print(timeit('prime(999)', number=50, globals=globals()))
 
 # print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 # print(f'Простое число под номером {user_num} это {prime(user_num)}')

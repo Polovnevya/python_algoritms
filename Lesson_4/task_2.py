@@ -77,16 +77,36 @@ def prime(num: int) -> int:
 # print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 # print(f'Простое число под номером {user_num} это {prime(user_num)}')
 #
-print(timeit('sieve(10)', number=100, globals=globals())) #0.0016482999999425374
-print(timeit('sieve(100)', number=100, globals=globals())) #0.13568280000004052
-print(timeit('sieve(500)', number=100, globals=globals())) #5.76559050000003
-print(timeit('sieve(1500)', number=100, globals=globals())) #62.053306999999904
-print(timeit('sieve(2500)', number=100, globals=globals())) #185.17176159999985
+print(timeit('sieve(10)', number=100, globals=globals()))       #  0.0220353
+print(timeit('sieve(100)', number=100, globals=globals()))      #  1.3815776
+print(timeit('sieve(500)', number=100, globals=globals()))      #  30.284424100000003
+print(timeit('sieve(1500)', number=100, globals=globals()))     #  263.7983361
+print(timeit('sieve(2500)', number=100, globals=globals()))     #  663.8547732
 
+run('sieve(1500)')
+"""
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.362    2.362 <string>:1(<module>)
+        1    0.000    0.000    2.362    2.362 task_2.py:18(sieve)
+        1    0.001    0.001    0.001    0.001 task_2.py:28(<listcomp>)
+        1    0.736    0.736    2.361    2.361 task_2.py:30(_pierce_sieve)
+        1    0.000    0.000    2.362    2.362 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+    13244    1.626    0.000    1.626    0.000 {method 'index' of 'list' objects}
+"""
 print('*****************')
 
-print(timeit('prime(10)', number=100, globals=globals()))
-print(timeit('prime(100)', number=100, globals=globals()))
-print(timeit('prime(500)', number=100, globals=globals()))
-print(timeit('prime(1500)', number=100, globals=globals()))
-print(timeit('prime(2500)', number=100, globals=globals()))
+print(timeit('prime(10)', number=100, globals=globals()))       #  0.0016482999999425374
+print(timeit('prime(100)', number=100, globals=globals()))      #  0.13568280000004052
+print(timeit('prime(500)', number=100, globals=globals()))      #  5.76559050000003
+print(timeit('prime(1500)', number=100, globals=globals()))     #  62.053306999999904
+print(timeit('prime(2500)', number=100, globals=globals()))     #  185.17176159999985
+run('prime(1500)')
+"""
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.510    0.510 <string>:1(<module>)
+        1    0.002    0.002    0.510    0.510 task_2.py:50(prime)
+    12553    0.508    0.000    0.508    0.000 task_2.py:60(_is_prime)
+        1    0.000    0.000    0.510    0.510 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+"""

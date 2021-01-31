@@ -46,5 +46,9 @@ def ugly_func() -> list:
     return _get_even_indexes(array)
 
 
+def func_3():
+    pass
+
+
 a = ugly_func()
 v = 1

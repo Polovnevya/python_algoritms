@@ -20,7 +20,7 @@ def sieve(num: int) -> int:
     ехал грека через список
     """
 
-    assert num <= 1000, 'Извините, число больше 1000 не ищем'
+    assert num <= 10_000, 'Извините, число больше 10000 не ищем'
 
     START = 2
     END = num * 10
@@ -51,10 +51,10 @@ def prime(num: int) -> int:
     """
     модерн
     """
-    assert num <= 1000, 'Извините, число больше 1000 не ищем'
+    assert num <= 10_000, 'Извините, число больше 1000 не ищем'
 
     START = 1
-    END = 10_000
+    END = num * 10
     sieve_count = 0
 
     def _is_prime(num: int) -> bool:
@@ -73,17 +73,18 @@ def prime(num: int) -> int:
 
 
 # user_num = int(input('Введите какое по счету простое число требуется найти: '))
-user_num = 999
-print(f'Простое число под номером {user_num} это {sieve(user_num)}')
+# user_num = 3000
+# print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 # print(f'Простое число под номером {user_num} это {prime(user_num)}')
 #
-# print(timeit('sieve(10)', number=50, globals=globals()))  # 56.926322
-# print(timeit('sieve(100)', number=50, globals=globals())) # 52.5623961
-# print(timeit('sieve(500)', number=50, globals=globals())) # 52.443245799999985
-# print(timeit('sieve(999)', number=50, globals=globals())) # 56.813421800000015
-#
-# print('*****************')
-# print(timeit('prime(10)', number=50, globals=globals()))
-# print(timeit('prime(100)', number=50, globals=globals()))
-# print(timeit('prime(500)', number=50, globals=globals()))
-# print(timeit('prime(999)', number=50, globals=globals()))
+print(timeit('sieve(10)', number=100, globals=globals()))
+print(timeit('sieve(100)', number=100, globals=globals()))
+print(timeit('sieve(1000)', number=100, globals=globals()))
+print(timeit('sieve(9999)', number=100, globals=globals()))
+
+print('*****************')
+
+print(timeit('prime(10)', number=100, globals=globals()))
+print(timeit('prime(100)', number=100, globals=globals()))
+print(timeit('prime(1000)', number=100, globals=globals()))
+print(timeit('prime(9999)', number=100, globals=globals()))

@@ -23,7 +23,7 @@ def sieve(num: int) -> int:
     assert num <= 1000, 'Извините, число больше 1000 не ищем'
 
     START = 2
-    END = 10_000
+    END = num * 10
     sieve_count = 0
     sieve_array = [i for i in range(START, END)]
 
@@ -73,18 +73,17 @@ def prime(num: int) -> int:
 
 
 # user_num = int(input('Введите какое по счету простое число требуется найти: '))
-# user_num = 999
-
-print(timeit('sieve(10)', number=50, globals=globals()))  # 11.101579099999999
-print(timeit('sieve(100)', number=50, globals=globals()))
-print(timeit('sieve(500)', number=50, globals=globals()))
-print(timeit('sieve(999)', number=50, globals=globals()))
-
-print('*****************')
-print(timeit('prime(10)', number=50, globals=globals()))
-print(timeit('prime(100)', number=50, globals=globals()))
-print(timeit('prime(500)', number=50, globals=globals()))
-print(timeit('prime(999)', number=50, globals=globals()))
-
-# print(f'Простое число под номером {user_num} это {sieve(user_num)}')
+user_num = 999
+print(f'Простое число под номером {user_num} это {sieve(user_num)}')
 # print(f'Простое число под номером {user_num} это {prime(user_num)}')
+#
+# print(timeit('sieve(10)', number=50, globals=globals()))  # 56.926322
+# print(timeit('sieve(100)', number=50, globals=globals())) # 52.5623961
+# print(timeit('sieve(500)', number=50, globals=globals())) # 52.443245799999985
+# print(timeit('sieve(999)', number=50, globals=globals())) # 56.813421800000015
+#
+# print('*****************')
+# print(timeit('prime(10)', number=50, globals=globals()))
+# print(timeit('prime(100)', number=50, globals=globals()))
+# print(timeit('prime(500)', number=50, globals=globals()))
+# print(timeit('prime(999)', number=50, globals=globals()))

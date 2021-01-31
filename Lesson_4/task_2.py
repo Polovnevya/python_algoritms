@@ -50,21 +50,23 @@ def prime(num: int) -> int:
     """
     assert num <= 200, 'больше сотого числа не ищем, извините'
 
-    START = 2
+    START = 1
     END = 1_000
     sieve_count = 0
 
-    def _is_prime(n):
-        if n <= 1:
+    def _is_prime(num: int) -> bool:
+        if num <= 1:
             return False
-        for i in range(2, n):
-            if n % i == 0:
+        for i in range(2, num):
+            if num % i == 0:
                 return False
         return True
 
     for i in range(START, END):
         if _is_prime(i):
             sieve_count += 1
+            if sieve_count == num:
+                return i
 
 
 user_num = int(input('Введите какое по счету простое число требуется найти: '))

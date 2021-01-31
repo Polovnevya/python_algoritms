@@ -11,6 +11,9 @@
 Примечание. Вспомните классический способ проверки числа на простоту.
 """
 
+from timeit import timeit
+from cProfile import run
+
 
 def sieve(num: int) -> int:
     """
@@ -70,8 +73,13 @@ def prime(num: int) -> int:
 
 
 # user_num = int(input('Введите какое по счету простое число требуется найти: '))
-user_num = 999
+# user_num = 999
 
-print(f'Простое число под номером {user_num} это {sieve(user_num)}')
+print(timeit('sieve(10)', number=20, globals=globals()))  # 11.101579099999999
+print(timeit('sieve(20)', number=20, globals=globals()))
+print(timeit('sieve(40)', number=20, globals=globals()))
+print(timeit('sieve(80)', number=20, globals=globals()))
+print(timeit('sieve(160)', number=20, globals=globals()))
 
-print(f'Простое число под номером {user_num} это {prime(user_num)}')
+# print(f'Простое число под номером {user_num} это {sieve(user_num)}')
+# print(f'Простое число под номером {user_num} это {prime(user_num)}')

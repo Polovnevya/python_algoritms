@@ -20,7 +20,7 @@ def sieve(num: int) -> int:
     ехал грека через список
     """
 
-    assert num <= 10_000, 'Извините, число больше 10000 не ищем'
+    assert num <= 11_000, 'Извините, число больше 11000 не ищем'
 
     START = 2
     END = num * 10
@@ -51,7 +51,7 @@ def prime(num: int) -> int:
     """
     модерн
     """
-    assert num <= 10_000, 'Извините, число больше 1000 не ищем'
+    assert num <= 11_000, 'Извините, число больше 1100 не ищем'
 
     START = 1
     END = num * 10
@@ -80,11 +80,11 @@ def prime(num: int) -> int:
 print(timeit('sieve(10)', number=100, globals=globals()))
 print(timeit('sieve(100)', number=100, globals=globals()))
 print(timeit('sieve(1000)', number=100, globals=globals()))
-print(timeit('sieve(9999)', number=100, globals=globals()))
+print(timeit('sieve(10000)', number=100, globals=globals()))
 
 print('*****************')
 
 print(timeit('prime(10)', number=100, globals=globals()))
 print(timeit('prime(100)', number=100, globals=globals()))
 print(timeit('prime(1000)', number=100, globals=globals()))
-print(timeit('prime(9999)', number=100, globals=globals()))
+print(timeit('prime(10000)', number=100, globals=globals()))

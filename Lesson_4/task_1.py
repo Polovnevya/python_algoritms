@@ -59,13 +59,16 @@ print(timeit('func_1(1_00)', number=100, globals=globals()))  # 0.01140370000000
 print(timeit('func_1(1_000)', number=100, globals=globals()))  # 0.1505243
 print(timeit('func_1(10_000)', number=100, globals=globals()))  # 1.1570426999999999
 print(timeit('func_1(100_000)', number=100, globals=globals()))  # 11.6363716
+run('func_1(100_000)')
 print('********************************************************************')
 print(timeit('ugly_func(1_00)', number=100, globals=globals()))  # 0.01381810000000172
 print(timeit('ugly_func(1_000)', number=100, globals=globals()))  # 0.14056080000000115
 print(timeit('ugly_func(10_000)', number=100, globals=globals()))  # 2.0527015000000013
 print(timeit('ugly_func(100_000)', number=100, globals=globals()))  # 123.46583239999998
+run('ugly_func(100_000)')
 print('********************************************************************')
 print(timeit('func_3(1_00)', number=100, globals=globals()))  # 0.011017199999997729
 print(timeit('func_3(1_000)', number=100, globals=globals()))  # 0.12025529999999662
 print(timeit('func_3(10_000)', number=100, globals=globals()))  # 1 .1227595000000008
 print(timeit('func_3(100_000)', number=100, globals=globals()))  # 11.986708399999998
+run('func_3(100_000)')

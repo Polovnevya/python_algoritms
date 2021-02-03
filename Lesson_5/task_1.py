@@ -31,7 +31,7 @@ def get_data_from_user(num: int) -> namedtuple:
     return avg_profit(spam)
 
 
-def get_and_print_company_data(count: int) -> list:
+def get_and_print_company_data(count: int):
     company_num = []
     total_avg = 0
     for i in range(1, count + 1):

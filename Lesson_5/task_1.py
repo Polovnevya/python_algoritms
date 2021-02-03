@@ -7,8 +7,10 @@
     чья прибыль выше среднего и ниже среднего.
 """
 
-from collections import Counter
 from collections import namedtuple
+
+Company = namedtuple('Company',
+                     'company_name, quarter_profit_1, quarter_profit_2, quarter_profit_3 , quarter_profit_4 avg')
 
 
 def avg_profit(company: namedtuple) -> namedtuple:
@@ -29,11 +31,9 @@ def get_data_from_user(num: int) -> namedtuple:
     return avg_profit(spam)
 
 
-def main(count: int) -> list:
+def get_and_print_company_data(count: int) -> list:
     company_num = []
     total_avg = 0
-    min_avg = ()
-    max_avg = ()
     for i in range(1, count + 1):
         company_num.append(get_data_from_user(i))
         total_avg += company_num[i - 1].avg
@@ -48,8 +48,4 @@ def main(count: int) -> list:
               f' {more_less} средней прибыли всех предприятий {total_avg}')
 
 
-Company = namedtuple('Company',
-                     'company_name, quarter_profit_1, quarter_profit_2, quarter_profit_3 , quarter_profit_4 avg')
-
-main(2)
-
+get_and_print_company_data(2)

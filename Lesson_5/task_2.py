@@ -21,12 +21,13 @@ def hex_sum():
         spam = first_num.pop()
         if second_num:
             ham = second_num.pop()
-            tmp = (hex_num.index(spam) + hex_num.index(ham) + k) % 16
-            egg_index = hex_num.index(tmp)
-            third.append(egg_index)
+            egg_index = (hex_num.index(spam) + hex_num.index(ham) + k) % 16
+            egg = hex_num[tmp]
+            third.append(egg)
         else:
-            egg_index = hex_num.index((hex_num.index(spam) + k) % 16)
-            third.append(egg_index)
+            egg_index = (hex_num.index(spam) + k) % 16
+            egg = hex_num[tmp]
+            third.append(egg)
 
         if (hex_num.index(spam) + hex_num.index(ham)) >= 15:
             k = 1

@@ -9,8 +9,12 @@
 from collections import deque
 
 
-def hex_sum(first_num: list, second_num: list) -> deque:
+def hex_sum(num_1: list, num_2: list) -> list:
     hex_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    first_num = []
+    first_num.extend(num_1)
+    second_num = []
+    second_num.extend(num_2)
     third = deque()
     k = 0
     if first_num < second_num:
@@ -33,5 +37,4 @@ def hex_sum(first_num: list, second_num: list) -> deque:
 
 first_num = list(input('Введите первое 16ричное число: '))
 second_num = list(input('Введите второе 16ричное число: '))
-print(*first_num, '+', *second_num, ' = ', *hex_sum(first_num, second_num), sep='')
-# print(f'Сумма чисел {first_num} + {second_num} = {hex_sum(first_num, second_num)}')
+print(*first_num, ' + ', *second_num, ' = ', *hex_sum(first_num, second_num), sep='')

@@ -9,14 +9,32 @@ from collections import deque
 
 
 def hex_sum():
+    hex_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
     first_num = deque(input('Введите первое 16ричное число: '))
     second_num = deque(input('Введите второе 16ричное число: '))
 
     if first_num < second_num:
         first_num, second_num = second_num, first_num
-
+    third = deque()
+    k = 0
     while first_num:
-        x = 1
+        spam = first_num.pop()
+        if second_num:
+            ham = second_num.pop()
+            tmp = (hex_num.index(spam) + hex_num.index(ham) + k) % 16
+            egg_index = hex_num.index(tmp)
+            third.append(egg_index)
+        else:
+            egg_index = hex_num.index((hex_num.index(spam) + k) % 16)
+            third.append(egg_index)
+
+        if (hex_num.index(spam) + hex_num.index(ham)) >= 15:
+            k = 1
+        else:
+            k = 0
+
+    return third.reverse()
 
 
-hex_sum()
+a = hex_sum()
+b = 1

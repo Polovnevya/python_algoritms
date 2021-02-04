@@ -9,34 +9,29 @@
 from collections import deque
 
 
-def hex_sum():
+def hex_sum(first_num: list, second_num: list) -> deque:
     hex_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-
-
-    if first_num < second_num:
-        first_num, second_num = second_num, first_num
     third = deque()
     k = 0
+    if first_num < second_num:
+        first_num, second_num = second_num, first_num
+
     while first_num:
         spam = first_num.pop()
         if second_num:
             ham = second_num.pop()
-            egg_index = (hex_num.index(spam) + hex_num.index(ham) + k) % 16
-            egg = hex_num[egg_index]
-            third.appendleft(egg)
+            third.appendleft(hex_num[(hex_num.index(spam) + hex_num.index(ham) + k) % 16])
         else:
-            egg_index = (hex_num.index(spam) + k) % 16
-            egg = hex_num[egg_index]
-            third.appendleft(egg)
+            third.appendleft(hex_num[(hex_num.index(spam) + k) % 16])
 
         if (hex_num.index(spam) + hex_num.index(ham)) >= 15:
             k = 1
         else:
             k = 0
-    return third
+    return list(third)
 
 
-first_num = deque(input('Введите первое 16ричное число: '))
-second_num = deque(input('Введите второе 16ричное число: '))
-a = hex_sum()
-b = 1
+first_num = list(input('Введите первое 16ричное число: '))
+second_num = list(input('Введите второе 16ричное число: '))
+print(*first_num, '+', *second_num, ' = ', *hex_sum(first_num, second_num), sep='')
+# print(f'Сумма чисел {first_num} + {second_num} = {hex_sum(first_num, second_num)}')

@@ -21,7 +21,7 @@ def func_var_list(start: int, end: int):
     for i in range(2, 10):
         array = [el for el in range(start, end, i) if el >= i and el <= end]
         show_mem(array)
-        print(array)
+        #print(array)
         print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
     return None
 
@@ -31,7 +31,7 @@ def func_var_tuple(start: int, end: int):
     for i in range(2, 10):
         array = tuple([el for el in range(start, end, i) if el >= i and el <= end])
         show_mem(array)
-        print(array)
+        #print(array)
         print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
 
     return None
@@ -42,12 +42,12 @@ def func_var_set(start: int, end: int):
     for i in range(2, 10):
         array = set([el for el in range(start, end, i) if el >= i and el <= end])
         show_mem(array)
-        print(array)
+        #print(array)
         print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
 
     return None
 
 
-func_var_list(0, 10)
-func_var_tuple(0, 10)
-func_var_set(0, 10)
+func_var_list(0, 50)
+func_var_tuple(0, 50)
+func_var_set(0, 50)

@@ -3,6 +3,7 @@
 """
 
 import sys
+from collections import deque
 
 
 def show_mem(obj):
@@ -47,7 +48,17 @@ def func_var_set(start: int, end: int):
 
     return None
 
+def func_var_deque(start: int, end: int):
+    array = ()
+    for i in range(2, 10):
+        array = deque([el for el in range(start, end, i) if el >= i and el <= end])
+        show_mem(array)
+        #print(array)
+        print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
 
-func_var_list(0, 50)
-func_var_tuple(0, 50)
-func_var_set(0, 50)
+    return None
+
+func_var_list(0, 100)
+func_var_tuple(0, 100)
+func_var_set(0, 100)
+func_var_deque(0, 100)

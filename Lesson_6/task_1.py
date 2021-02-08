@@ -85,10 +85,10 @@ def func_var_1(start: int, end: int):
     return None
 
 
-#func_var_list(0, 100)
-#func_var_tuple(0, 100)
-#func_var_set(0, 100)
-#func_var_deque(0, 100)
+func_var_list(0, 100)
+func_var_tuple(0, 100)
+func_var_set(0, 100)
+func_var_deque(0, 100)
 func_var_1(0, 100)
 
 """

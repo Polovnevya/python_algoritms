@@ -30,6 +30,7 @@ def func_var_2(start: int, end: int):
     array = ()
     for i in range(2, 10):
         array = tuple([el for el in range(start, end, i) if el >= i and el <= end])
+        show_mem(array)
         print(array)
         print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
 

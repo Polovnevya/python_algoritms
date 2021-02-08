@@ -17,7 +17,7 @@ def show_mem(obj):
                 show_mem(item)
 
 
-def func_var_1(start: int, end: int):
+def func_var_list(start: int, end: int):
     for i in range(2, 10):
         array = [el for el in range(start, end, i) if el >= i and el <= end]
         show_mem(array)
@@ -26,7 +26,7 @@ def func_var_1(start: int, end: int):
     return None
 
 
-def func_var_2(start: int, end: int):
+def func_var_tuple(start: int, end: int):
     array = ()
     for i in range(2, 10):
         array = tuple([el for el in range(start, end, i) if el >= i and el <= end])
@@ -37,5 +37,17 @@ def func_var_2(start: int, end: int):
     return None
 
 
-func_var_1(0, 10)
-func_var_2(0, 10)
+def func_var_set(start: int, end: int):
+    array = ()
+    for i in range(2, 10):
+        array = set([el for el in range(start, end, i) if el >= i and el <= end])
+        show_mem(array)
+        print(array)
+        print(f'В диапазоне {start} - {end} находится {len(array)} чисел кратных {i}')
+
+    return None
+
+
+func_var_list(0, 10)
+func_var_tuple(0, 10)
+func_var_set(0, 10)

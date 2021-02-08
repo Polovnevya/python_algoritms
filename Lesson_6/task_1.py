@@ -80,8 +80,8 @@ def func_var_1(start: int, end: int):
         show_mem(array_3)
         print(f'В диапазоне {start} - {end} находится {len(array_3)} чисел кратных {ham}')
 
-        show_mem(array_2)
-        show_mem(array_1)
+    show_mem(array_2)
+    show_mem(array_1)
     return None
 
 

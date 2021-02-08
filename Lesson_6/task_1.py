@@ -72,17 +72,17 @@ def func_var_deque(start: int, end: int):
 def func_var_1(start: int, end: int):
     array_1 = [i for i in range(2, 10)]
     array_2 = [i for i in range(start, end)]
-    array_3 = []
     for ham in array_1:
+        array_3 = []
         for spam in array_2:
             if spam >= ham and spam <= end and spam % ham == 0:
                 array_3.append(spam)
         show_mem(array_3)
+        print(f'В диапазоне {start} - {end} находится {len(array_3)} чисел кратных {ham}')
+
         show_mem(array_2)
         show_mem(array_1)
-        print(f'В диапазоне {start} - {end} находится {len(array_3)} чисел кратных {ham}')
     return None
-
 
 
 func_var_list(0, 100)

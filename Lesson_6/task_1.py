@@ -10,14 +10,15 @@ Python 3.7.8 (tags/v3.7.8:4b47a5b6ba, Jun 28 2020, 08:53:46) [MSC v.1916 64 bit 
 """
 
 import sys
-from collections import deque
+from collections import deque, Counter
 
 
 def show_mem(obj):
     print(f'{type(obj)}\t{sys.getsizeof(obj)}\t{obj}')
     if hasattr(obj, '__iter__'):
         if hasattr(obj, 'items'):
-            for key, value in obj.items:
+
+            for key, value in obj.items():
                 show_mem(key)
                 show_mem(value)
         elif not isinstance(obj, str):
@@ -85,11 +86,25 @@ def func_var_1(start: int, end: int):
     return None
 
 
+def func_var_2(start: int, end: int):
+    def check(divider: int, digit: int, end: int) -> bool:
+        if digit >= divider and digit <= end and digit % divider == 0:
+            return True
+        else:
+            return False
+
+    for i in range(2, 10):
+        array = Counter([check(i, x, end) for x in range(start, end, i)])
+        show_mem(array)
+        print(f'В диапазоне {start} - {end} находится {array[True]} чисел кратных {i}')
+
+
 func_var_list(0, 100)
 func_var_tuple(0, 100)
 func_var_set(0, 100)
 func_var_deque(0, 100)
 func_var_1(0, 100)
+func_var_2(0, 100)
 
 """
 Вывод:
@@ -102,7 +117,7 @@ func_var_1(0, 100)
  разница заключается в типе коллекции
  *******************************************************************************************************************
 func_var_list(0, 100)  = ((49+3) * 28) + 528 + 24    = 2008
-func_var_tuple(0, 100) = ((49+3) * 28) + 440 + 24    = 1920
+func_var_tuple(0, 100) = ((49+3) * 28) + 440 + 24    = 1920  *самый оптимальный вариант
 func_var_set(0, 100)   = ((49+3) * 28) + 2272 + 24   = 3752
 func_var_deque(0, 100) = ((49+3) * 28) + 632 + 24    = 2112
 func_var_1(0, 100) = ((49+3) * 28) + 528 + 24 + 352 + 3708 = 6068 см строка 139.
@@ -148,6 +163,8 @@ func_var_1(0, 100) = ((49+3) * 28) + 528 + 24 + 352 + 3708 = 6068
 
 Выводы можно сделать такие, стараться уменьшать количество промежуточных "константных" списков,
  в случае если приходится их использовать - использовать не списки, а кортежи.
+ 
+
 
 
 """

@@ -16,7 +16,7 @@ SIZE = 2 * M + 1
 array = [randint(START, STOP) for i in range(SIZE)]
 
 
-def partition(array, left, right):
+def partition(array: list, left: int, right: int) -> int:
     pivot = array[(left + right) // 2]
     while left <= right:
         while array[left] < pivot:
@@ -24,13 +24,13 @@ def partition(array, left, right):
         while array[right] > pivot:
             right -= 1
         if left <= right:
-            array[left], array[j] = array[j], array[left]
+            array[left], array[right] = array[right], array[left]
             left += 1
             right -= 1
     return right
 
 
-def my_sort(data: list) -> list:
+def find_mid(data: list) -> list:
     pivot = len(data) // 2
     left = 0
     right = len(data) - 1
@@ -47,4 +47,4 @@ def my_sort(data: list) -> list:
 
 
 print(array)
-print(my_sort(array))
+print(find_mid(array))

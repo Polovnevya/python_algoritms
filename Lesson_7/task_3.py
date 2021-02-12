@@ -16,10 +16,35 @@ SIZE = 2 * M + 1
 array = [randint(START, STOP) for i in range(SIZE)]
 
 
+def partition(a, i, j):
+    v = a[(i + j) // 2]
+    while i <= j:
+        while a[i] < v:
+            i += 1
+        while a[j] > v:
+            j -= 1
+        if i <= j:
+            a[i], a[j] = a[j], a[i]
+            i += 1
+            j -= 1
+    return j
+
+
 def my_sort(data: list) -> list:
-    array = data.copy()
-    num = len(array) // 2
-    return array
+    pivot = len(data) // 2
+    left = 0
+    right = len(data) - 1
+    while (True):
+        mid = partition(data, left, right)
+
+        if mid == pivot:
+            return data[mid]
+
+        if pivot < mid:
+            right = mid
+        else:
+            left = mid + 1
 
 
-a = my_sort(array)
+print(array)
+print(my_sort(array))

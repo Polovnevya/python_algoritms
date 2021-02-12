@@ -7,11 +7,6 @@
 from random import randint
 from timeit import timeit
 
-START = 0
-STOP = 49
-SIZE = 1000
-array = [randint(START, STOP) for i in range(SIZE)]
-
 
 def merge_arrays(array_1: list, array_2: list) -> list:
     tmp_array = []
@@ -46,6 +41,11 @@ def merge_sort(data: list) -> list:
         second_array = merge_sort(data[mid:])
         return merge_arrays(first_array, second_array)
 
+
+START = 0
+STOP = 49
+SIZE = 1000
+array = [randint(START, STOP) for i in range(SIZE)]
 
 print(f'Исходный массив {array}')
 print(f'Массив после сортировки {merge_sort(array)}')

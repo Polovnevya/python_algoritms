@@ -9,7 +9,7 @@ from timeit import timeit
 
 START = 0
 STOP = 49
-SIZE = 10
+SIZE = 1000
 array = [randint(START, STOP) for i in range(SIZE)]
 
 
@@ -49,3 +49,4 @@ def merge_sort(data: list) -> list:
 
 print(f'Исходный массив {array}')
 print(f'Массив после сортировки {merge_sort(array)}')
+print(timeit('merge_sort(array)', number=100, globals=globals()))  # 0.44002020000000003
